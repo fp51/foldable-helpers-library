@@ -1,10 +1,10 @@
-@iadvize-oss/foldable-helpers
+@fp51/foldable-helpers
 ====================
-![Continuous integration](https://github.com/iadvize/foldable-helpers-library/workflows/Continuous%20integration/badge.svg)
+![Continuous integration](https://github.com/fp51/foldable-helpers-library/workflows/Continuous%20integration/badge.svg)
 
 > Helpers to fold on things
 
-While we recommend using `@iadvize-oss/foldable-helpers` with Typescript, it can
+While we recommend using `@fp51/foldable-helpers` with Typescript, it can
 be used in standard Javascript apps.
 
 # 💻 Usage 
@@ -12,10 +12,10 @@ be used in standard Javascript apps.
 First, install the library:
 
 ```bash
-yarn add @iadvize-oss/foldable-helpers
+yarn add @fp51/foldable-helpers
 ```
 
-[📖 Documentation](https://iadvize.github.io/foldable-helpers-library/)
+[📖 Documentation](https://fp51.github.io/foldable-helpers-library/)
 
 ## Classic fold - `createFold`
 
@@ -34,7 +34,7 @@ To create a fold function to fold on `T`, use `createFold`
 ```ts
 import { pipe } from 'fp-ts/es6/pipeable';
 
-import { createFold } from '@iadvize-oss/foldable-helpers';
+import { createFold } from '@fp51/foldable-helpers';
 
 const foldOnT = createFold(isA, isB, isC);
 
@@ -75,7 +75,7 @@ an object.
 ```ts
 import { pipe } from 'fp-ts/es6/pipeable';
 
-import { createFoldObject } from '@iadvize-oss/foldable-helpers';
+import { createFoldObject } from '@fp51/foldable-helpers';
 
 const foldOnT = createFoldObject({
   onA: isA,

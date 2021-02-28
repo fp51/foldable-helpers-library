@@ -34,9 +34,7 @@ export function and<
   Guards extends Guard<any, any>[]
 >(...guards: Guards) {
   type GuardsParameters = Parameters<Guards[number]>;
-  type IntersectionOfInputTypes = InputParametersToIntersection<
-    GuardsParameters
-  >;
+  type IntersectionOfInputTypes = InputParametersToIntersection<GuardsParameters>;
 
   type OuputTypes = GuardedType<Guards[number]>;
 
@@ -67,9 +65,7 @@ export function or<
 >(...guards: Guards) {
   type GuardsParameters = Parameters<Guards[number]>;
 
-  type IntersectionOfInputTypes = InputParametersToIntersection<
-    GuardsParameters
-  >;
+  type IntersectionOfInputTypes = InputParametersToIntersection<GuardsParameters>;
 
   type OuputTypes = GuardedType<Guards[number]>;
 
