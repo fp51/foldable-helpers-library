@@ -1,0 +1,248 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@fp51/foldable-helpers - v1.0.0</title>
+	<meta name="description" content="Documentation for @fp51/foldable-helpers - v1.0.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@fp51/foldable-helpers - v1.0.0</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>@fp51/foldable-helpers - v1.0.0</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#fp51foldable-helpers" id="fp51foldable-helpers" style="color: inherit; text-decoration: none;">
+					<h1>@fp51/foldable-helpers</h1>
+				</a>
+				<p><img src="https://github.com/fp51/foldable-helpers-library/workflows/Continuous%20integration/badge.svg" alt="Continuous integration"></p>
+				<blockquote>
+					<p>Helpers to fold on things</p>
+				</blockquote>
+				<p>While we recommend using <code>@fp51/foldable-helpers</code> with Typescript, it can
+				be used in standard Javascript apps.</p>
+				<a href="#💻-usage" id="💻-usage" style="color: inherit; text-decoration: none;">
+					<h1>💻 Usage</h1>
+				</a>
+				<p>First, install the library:</p>
+				<pre><code class="language-bash"><span style="color: #000000">yarn add @fp51/foldable-helpers</span>
+</code></pre>
+				<p><a href="https://fp51.github.io/foldable-helpers-library/">📖 Documentation</a></p>
+				<a href="#classic-fold---createfold" id="classic-fold---createfold" style="color: inherit; text-decoration: none;">
+					<h2>Classic fold - <code>createFold</code></h2>
+				</a>
+				<p>You have a sum type and the type guards for each of the types. For example:</p>
+				<pre><code class="language-ts"><span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">T</span><span style="color: #000000"> = </span><span style="color: #267F99">A</span><span style="color: #000000"> | </span><span style="color: #267F99">B</span><span style="color: #000000"> | </span><span style="color: #267F99">C</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">isA</span><span style="color: #000000">(</span><span style="color: #001080">t</span><span style="color: #000000">: </span><span style="color: #267F99">T</span><span style="color: #000000">): </span><span style="color: #001080">t</span><span style="color: #000000"> </span><span style="color: #0000FF">is</span><span style="color: #000000"> </span><span style="color: #267F99">A</span><span style="color: #000000"> { ... };</span>
+<span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">isB</span><span style="color: #000000">(</span><span style="color: #001080">t</span><span style="color: #000000">: </span><span style="color: #267F99">T</span><span style="color: #000000">): </span><span style="color: #001080">t</span><span style="color: #000000"> </span><span style="color: #0000FF">is</span><span style="color: #000000"> </span><span style="color: #267F99">B</span><span style="color: #000000"> { ... };</span>
+<span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">isC</span><span style="color: #000000">(</span><span style="color: #001080">t</span><span style="color: #000000">: </span><span style="color: #267F99">T</span><span style="color: #000000">): </span><span style="color: #001080">t</span><span style="color: #000000"> </span><span style="color: #0000FF">is</span><span style="color: #000000"> </span><span style="color: #267F99">C</span><span style="color: #000000"> { ... };</span>
+</code></pre>
+				<p>To create a fold function to fold on <code>T</code>, use <code>createFold</code></p>
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">pipe</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;fp-ts/es6/pipeable&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">createFold</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@fp51/foldable-helpers&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">foldOnT</span><span style="color: #000000"> = </span><span style="color: #795E26">createFold</span><span style="color: #000000">(</span><span style="color: #001080">isA</span><span style="color: #000000">, </span><span style="color: #001080">isB</span><span style="color: #000000">, </span><span style="color: #001080">isC</span><span style="color: #000000">);</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">t</span><span style="color: #000000">: </span><span style="color: #267F99">T</span><span style="color: #000000"> = ...;</span>
+
+<span style="color: #795E26">pipe</span><span style="color: #000000">(</span>
+<span style="color: #000000">  </span><span style="color: #001080">t</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #795E26">foldOnT</span><span style="color: #000000">(</span>
+<span style="color: #000000">    (</span><span style="color: #001080">tbis</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;executed when t is A&#039;</span><span style="color: #000000">, { </span><span style="color: #001080">tbis</span><span style="color: #000000"> }),</span>
+<span style="color: #000000">    (</span><span style="color: #001080">tbis</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;executed when t is B&#039;</span><span style="color: #000000">, { </span><span style="color: #001080">tbis</span><span style="color: #000000"> }),</span>
+<span style="color: #000000">    (</span><span style="color: #001080">tbis</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;executed when t is C&#039;</span><span style="color: #000000">, { </span><span style="color: #001080">tbis</span><span style="color: #000000"> }),</span>
+<span style="color: #000000">  ),</span>
+<span style="color: #000000">);</span>
+</code></pre>
+				<a href="#named-fold---createfoldobject" id="named-fold---createfoldobject" style="color: inherit; text-decoration: none;">
+					<h2>Named fold - <code>createFoldObject</code></h2>
+				</a>
+				<p>Classic fold is very useful but could become hard to read when we have more than
+					3-4 types to fold on.
+					Because we don&#39;t have named parameters in JS/Typescript, we have to use
+				something else.</p>
+				<p>You still have a sum type and the type guards for each of the types.
+				For example:</p>
+				<pre><code class="language-ts"><span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">T</span><span style="color: #000000"> = </span><span style="color: #267F99">A</span><span style="color: #000000"> | </span><span style="color: #267F99">B</span><span style="color: #000000"> | </span><span style="color: #267F99">C</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">isA</span><span style="color: #000000">(</span><span style="color: #001080">t</span><span style="color: #000000">: </span><span style="color: #267F99">T</span><span style="color: #000000">): </span><span style="color: #001080">t</span><span style="color: #000000"> </span><span style="color: #0000FF">is</span><span style="color: #000000"> </span><span style="color: #267F99">A</span><span style="color: #000000"> { ... };</span>
+<span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">isB</span><span style="color: #000000">(</span><span style="color: #001080">t</span><span style="color: #000000">: </span><span style="color: #267F99">T</span><span style="color: #000000">): </span><span style="color: #001080">t</span><span style="color: #000000"> </span><span style="color: #0000FF">is</span><span style="color: #000000"> </span><span style="color: #267F99">B</span><span style="color: #000000"> { ... };</span>
+<span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">isC</span><span style="color: #000000">(</span><span style="color: #001080">t</span><span style="color: #000000">: </span><span style="color: #267F99">T</span><span style="color: #000000">): </span><span style="color: #001080">t</span><span style="color: #000000"> </span><span style="color: #0000FF">is</span><span style="color: #000000"> </span><span style="color: #267F99">C</span><span style="color: #000000"> { ... };</span>
+</code></pre>
+				<p>To create a named fold function to fold on <code>T</code> without loosing readability,
+					use <code>createFoldObject</code>. You choose the name of each fold function by passing
+				an object.</p>
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">pipe</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;fp-ts/es6/pipeable&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">createFoldObject</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@fp51/foldable-helpers&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">foldOnT</span><span style="color: #000000"> = </span><span style="color: #795E26">createFoldObject</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">onA:</span><span style="color: #000000"> </span><span style="color: #001080">isA</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">onB:</span><span style="color: #000000"> </span><span style="color: #001080">isB</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">onC:</span><span style="color: #000000"> </span><span style="color: #001080">isC</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">t</span><span style="color: #000000">: </span><span style="color: #267F99">T</span><span style="color: #000000"> = ...;</span>
+
+<span style="color: #795E26">pipe</span><span style="color: #000000">(</span>
+<span style="color: #000000">  </span><span style="color: #001080">t</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #795E26">foldOnT</span><span style="color: #000000">({</span>
+<span style="color: #000000">    </span><span style="color: #795E26">onA</span><span style="color: #001080">:</span><span style="color: #000000"> (</span><span style="color: #001080">tbis</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;executed when t is A&#039;</span><span style="color: #000000">, { </span><span style="color: #001080">tbis</span><span style="color: #000000"> }),</span>
+<span style="color: #000000">    </span><span style="color: #795E26">onB</span><span style="color: #001080">:</span><span style="color: #000000"> (</span><span style="color: #001080">tbis</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;executed when t is B&#039;</span><span style="color: #000000">, { </span><span style="color: #001080">tbis</span><span style="color: #000000"> }),</span>
+<span style="color: #000000">    </span><span style="color: #795E26">onC</span><span style="color: #001080">:</span><span style="color: #000000"> (</span><span style="color: #001080">tbis</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;executed when t is C&#039;</span><span style="color: #000000">, { </span><span style="color: #001080">tbis</span><span style="color: #000000"> }),</span>
+<span style="color: #000000">  }),</span>
+<span style="color: #000000">);</span>
+</code></pre>
+				<a href="#and" id="and" style="color: inherit; text-decoration: none;">
+					<h2><code>and</code></h2>
+				</a>
+				<p>When using fold you will probably encounter cases where a type is a combination
+					(intersection) of different guards. To reduce the boilerplate having to write
+				each combination by hand you can use the <code>and</code> helper.</p>
+				<pre><code class="language-ts"><span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">A</span><span style="color: #000000"> = { </span><span style="color: #001080">a</span><span style="color: #000000">: </span><span style="color: #267F99">string</span><span style="color: #000000"> };</span>
+<span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">B</span><span style="color: #000000"> = { </span><span style="color: #001080">b</span><span style="color: #000000">: </span><span style="color: #267F99">number</span><span style="color: #000000"> };</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">isTypeA</span><span style="color: #000000"> = (</span><span style="color: #001080">value</span><span style="color: #000000">: </span><span style="color: #267F99">any</span><span style="color: #000000">): </span><span style="color: #001080">value</span><span style="color: #000000"> </span><span style="color: #0000FF">is</span><span style="color: #000000"> </span><span style="color: #267F99">A</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span>
+<span style="color: #000000">  </span><span style="color: #001080">value</span><span style="color: #000000"> != </span><span style="color: #0000FF">null</span><span style="color: #000000"> &amp;&amp; </span><span style="color: #0000FF">typeof</span><span style="color: #000000"> </span><span style="color: #001080">value</span><span style="color: #000000">.</span><span style="color: #001080">a</span><span style="color: #000000"> === </span><span style="color: #A31515">&#039;string&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">isTypeB</span><span style="color: #000000"> = (</span><span style="color: #001080">value</span><span style="color: #000000">: </span><span style="color: #267F99">any</span><span style="color: #000000">): </span><span style="color: #001080">value</span><span style="color: #000000"> </span><span style="color: #0000FF">is</span><span style="color: #000000"> </span><span style="color: #267F99">B</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span>
+<span style="color: #000000">  </span><span style="color: #001080">value</span><span style="color: #000000"> != </span><span style="color: #0000FF">null</span><span style="color: #000000"> &amp;&amp; </span><span style="color: #0000FF">typeof</span><span style="color: #000000"> </span><span style="color: #001080">value</span><span style="color: #000000">.</span><span style="color: #001080">b</span><span style="color: #000000"> === </span><span style="color: #A31515">&#039;number&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">oldIsTypeAAndB</span><span style="color: #000000"> = (</span><span style="color: #001080">value</span><span style="color: #000000">: </span><span style="color: #267F99">any</span><span style="color: #000000">): </span><span style="color: #001080">value</span><span style="color: #000000"> </span><span style="color: #0000FF">is</span><span style="color: #000000"> </span><span style="color: #267F99">A</span><span style="color: #000000"> &amp; </span><span style="color: #267F99">B</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span>
+<span style="color: #000000">    </span><span style="color: #795E26">isTypeA</span><span style="color: #000000">(</span><span style="color: #001080">value</span><span style="color: #000000">) &amp;&amp; </span><span style="color: #795E26">isTypeB</span><span style="color: #000000">(</span><span style="color: #001080">value</span><span style="color: #000000">);</span>
+
+<span style="color: #008000">// isTypeAAndB :: (t: any) =&gt; t is A &amp; B</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">isTypeAAndB</span><span style="color: #000000"> = </span><span style="color: #795E26">and</span><span style="color: #000000">(</span><span style="color: #001080">isTypeA</span><span style="color: #000000">, </span><span style="color: #001080">isTypeB</span><span style="color: #000000">);</span>
+</code></pre>
+				<a href="#or" id="or" style="color: inherit; text-decoration: none;">
+					<h2><code>or</code></h2>
+				</a>
+				<p>When using fold you will probably encounter cases where a type is part of an
+					union of different guards. To reduce the boilerplate having to write each
+				combination by hand you can use the <code>or</code> helper.</p>
+				<pre><code class="language-ts"><span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">A</span><span style="color: #000000"> = { </span><span style="color: #001080">a</span><span style="color: #000000">: </span><span style="color: #267F99">string</span><span style="color: #000000"> };</span>
+<span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">B</span><span style="color: #000000"> = { </span><span style="color: #001080">b</span><span style="color: #000000">: </span><span style="color: #267F99">number</span><span style="color: #000000"> };</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">isTypeA</span><span style="color: #000000"> = (</span><span style="color: #001080">value</span><span style="color: #000000">: </span><span style="color: #267F99">any</span><span style="color: #000000">): </span><span style="color: #001080">value</span><span style="color: #000000"> </span><span style="color: #0000FF">is</span><span style="color: #000000"> </span><span style="color: #267F99">A</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span>
+<span style="color: #000000">  </span><span style="color: #001080">value</span><span style="color: #000000"> != </span><span style="color: #0000FF">null</span><span style="color: #000000"> &amp;&amp; </span><span style="color: #0000FF">typeof</span><span style="color: #000000"> </span><span style="color: #001080">value</span><span style="color: #000000">.</span><span style="color: #001080">a</span><span style="color: #000000"> === </span><span style="color: #A31515">&#039;string&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">isTypeB</span><span style="color: #000000"> = (</span><span style="color: #001080">value</span><span style="color: #000000">: </span><span style="color: #267F99">any</span><span style="color: #000000">): </span><span style="color: #001080">value</span><span style="color: #000000"> </span><span style="color: #0000FF">is</span><span style="color: #000000"> </span><span style="color: #267F99">B</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span>
+<span style="color: #000000">  </span><span style="color: #001080">value</span><span style="color: #000000"> != </span><span style="color: #0000FF">null</span><span style="color: #000000"> &amp;&amp; </span><span style="color: #0000FF">typeof</span><span style="color: #000000"> </span><span style="color: #001080">value</span><span style="color: #000000">.</span><span style="color: #001080">b</span><span style="color: #000000"> === </span><span style="color: #A31515">&#039;number&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">oldIsTypeAOrB</span><span style="color: #000000"> = (</span><span style="color: #001080">value</span><span style="color: #000000">: </span><span style="color: #267F99">any</span><span style="color: #000000">): </span><span style="color: #001080">value</span><span style="color: #000000"> </span><span style="color: #0000FF">is</span><span style="color: #000000"> </span><span style="color: #267F99">A</span><span style="color: #000000"> | </span><span style="color: #267F99">B</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span>
+<span style="color: #000000">    </span><span style="color: #795E26">isTypeA</span><span style="color: #000000">(</span><span style="color: #001080">value</span><span style="color: #000000">) || </span><span style="color: #795E26">isTypeB</span><span style="color: #000000">(</span><span style="color: #001080">value</span><span style="color: #000000">);</span>
+
+<span style="color: #008000">// isTypeAOrB :: (t: any) =&gt; t is A | B</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">isTypeAOrB</span><span style="color: #000000"> = </span><span style="color: #795E26">or</span><span style="color: #000000">(</span><span style="color: #001080">isTypeA</span><span style="color: #000000">, </span><span style="color: #001080">isTypeB</span><span style="color: #000000">);</span>
+</code></pre>
+				<a href="#not" id="not" style="color: inherit; text-decoration: none;">
+					<h2><code>not</code></h2>
+				</a>
+				<p>When using createFold you <strong>need to make sure that each guard mutually excludes
+					the others</strong> but it can sometimes be painfull if one type depends on another,
+				therefore we let you use the <code>not</code> operator to exclude a guard</p>
+				<pre><code class="language-ts"><span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">TypeA</span><span style="color: #000000"> = { </span><span style="color: #001080">a</span><span style="color: #000000">: </span><span style="color: #267F99">string</span><span style="color: #000000"> };</span>
+<span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">TypeB</span><span style="color: #000000"> = { </span><span style="color: #001080">a</span><span style="color: #000000">: </span><span style="color: #A31515">&#039;test&#039;</span><span style="color: #000000"> };</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">isTypeA</span><span style="color: #000000"> = (</span><span style="color: #001080">value</span><span style="color: #000000">: {</span><span style="color: #001080">a</span><span style="color: #000000">: </span><span style="color: #267F99">unknown</span><span style="color: #000000">}): </span><span style="color: #001080">value</span><span style="color: #000000"> </span><span style="color: #0000FF">is</span><span style="color: #000000"> </span><span style="color: #267F99">TypeA</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #0000FF">typeof</span><span style="color: #000000"> </span><span style="color: #001080">value</span><span style="color: #000000">.</span><span style="color: #001080">a</span><span style="color: #000000"> === </span><span style="color: #A31515">&#039;string&#039;</span><span style="color: #000000">;</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">isTypeB</span><span style="color: #000000"> = (</span><span style="color: #001080">value</span><span style="color: #000000">: </span><span style="color: #267F99">TypeA</span><span style="color: #000000">): </span><span style="color: #001080">value</span><span style="color: #000000"> </span><span style="color: #0000FF">is</span><span style="color: #000000"> </span><span style="color: #267F99">TypeB</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">value</span><span style="color: #000000">.</span><span style="color: #001080">a</span><span style="color: #000000"> === </span><span style="color: #A31515">&#039;test&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">fold</span><span style="color: #000000"> = </span><span style="color: #795E26">createFoldObject</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">onTypeA:</span><span style="color: #000000"> </span><span style="color: #795E26">combineGuards</span><span style="color: #000000">(</span><span style="color: #001080">isTypeA</span><span style="color: #000000">, </span><span style="color: #795E26">not</span><span style="color: #000000">(</span><span style="color: #001080">isTypeB</span><span style="color: #000000">)),</span>
+<span style="color: #000000">  </span><span style="color: #001080">onTypeB:</span><span style="color: #000000"> </span><span style="color: #001080">isTypeB</span><span style="color: #000000">,</span>
+<span style="color: #000000">});</span>
+</code></pre>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#and" class="tsd-kind-icon">and</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#createfold" class="tsd-kind-icon">create<wbr>Fold</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#createfoldobject" class="tsd-kind-icon">create<wbr>Fold<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#not" class="tsd-kind-icon">not</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#or" class="tsd-kind-icon">or</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
